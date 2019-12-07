@@ -24,7 +24,7 @@ stages:
       displayName: Build an image
       inputs:
         containerRegistry: 'Docker Registry'
-        repository: 'oitgaden/trainingapi'
+        repository: 'ntout/trainingapi'
         command: buildAndPush
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
