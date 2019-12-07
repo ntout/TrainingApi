@@ -23,7 +23,7 @@ stages:
     - task: Docker@2
       displayName: Build an image
       inputs:
-        containerRegistry: 'dockertodevops'
+        containerRegistry: 'docker_ntout'
         repository: 'ntout/trainingapi'
         command: buildAndPush
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
@@ -32,6 +32,6 @@ stages:
     - task: KubernetesManifest@0
       inputs:
         action: 'deploy'
-        kubernetesServiceConnection: 'Training API Cluster'
+        kubernetesServiceConnection: 'kube_ntout'
         namespace: 'default'
         manifests: 'kubernetes/deployment.yaml'
